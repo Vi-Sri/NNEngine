@@ -18,7 +18,7 @@ class Neuron {
           } 
     }
 
-    CalculatePredictions() {
+    CalculatePredictions(){
         var sum = 0;
         var multVal = 0;
         for( var i= 0; i < this.neuronConnections.length; i++){
