@@ -1,0 +1,27 @@
+import {Neuron, InputNeuron} from './neuron';
+
+class InputLayer {
+    constructor (data) {
+        this.neuronList = [];
+        this.neuronNumber = data.length;
+        for(var i = 0; i < this.neuronNumber; i++){
+            this.neuronList.push(new InputNeuron(data[i]));
+        }
+    }
+}
+
+class Layer {
+    constructor (previousLayer, neuronNumber, activationType){
+        this.neuronNumber = neuronNumber;
+        this.neuronList = [];
+        this.activationType = activationType;
+
+        for (var i = 0; i < neuronNumber; i++ ) {
+            this.neuronList.push(
+                new Neuron(previousLayer.neuronList, this.activationType)
+            )
+        }
+    }
+}
+
+export default { InputLayer, Layer };

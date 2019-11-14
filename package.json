@@ -1,0 +1,23 @@
+{
+  "name": "nnengine",
+  "version": "1.0.0",
+  "description": "Bare bones Neural engine on top of Javascript",
+  "main": "index.js",
+  "dependencies": {
+    "p5": "^0.10.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vi-Sri",
+  "license": "ISC"
+}
