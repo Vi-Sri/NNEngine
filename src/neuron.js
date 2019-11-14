@@ -12,9 +12,8 @@ class Neuron {
         this._weights = [];
         this._bias = 0;
 
-
         for(var i = 0; i < this.neuronConnections.length; i++){
-            this._weights[i] = 0;
+            this._weights[i] = Math.random();
           } 
     }
 
@@ -22,17 +21,16 @@ class Neuron {
         var sum = 0;
         var multVal = 0;
         for( var i= 0; i < this.neuronConnections.length; i++){
-            multVal = this._weights[i] * this.neuronConnections[i].predVal;
+            multVal = this._weights[i] * this.neuronConnections[i]._predVal;
             sum = sum + multVal[i];
           }
         sum = sum + this._bias
         
-        if(this.activation_type == 0){
-            this.pred_val = this.sigmoid(sum);
-          }
-        
-        if(this.activation_type == 1){
-            this.pred_val = this.relu(sum);
+        if(this.activationType == 0){
+            this._predVal = this.sigmoid(sum);
+        }
+        if(this.activationType == 1){
+            this._predVal = this.relu(sum);
         }
     }
 
