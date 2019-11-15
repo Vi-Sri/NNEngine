@@ -1,6 +1,6 @@
 import { InputLayer, Layer} from './layer';
 
-Network = Dataset => {
+Network = (Dataset) => {
     Dataset.forEach(data => {
         inputLayer = new InputLayer(data);
         layer1 = new Layer(inputLayer, 128, 1);

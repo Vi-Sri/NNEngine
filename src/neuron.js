@@ -5,7 +5,7 @@ class InputNeuron {
 }
 
 class Neuron {
-    constructor(neuronConnections, activationType) {
+    constructor(neuronNumber, neuronConnections, activationType) {
         this._predVal = 0;
         this.neuronConnections = neuronConnections;
         this.activationType = activationType
@@ -13,7 +13,7 @@ class Neuron {
         this._bias = 0;
 
         for(var i = 0; i < this.neuronConnections.length; i++){
-            this._weights[i] = Math.random();
+            this._weights[i] = Math.random() * (1/Math.sqrt(this.neuronConnections.length * neuronNumber));
           } 
     }
 
@@ -45,6 +45,10 @@ class Neuron {
         else {
             return num;
         }
+    }
+
+    static tanh(num) {
+        return ( (Math.exp(num) + Math.exp(-num)) / (Math.exp(num) - Math.exp(-num)) )
     }
 }
 

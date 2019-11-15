@@ -18,7 +18,7 @@ class Layer {
 
         for (var i = 0; i < neuronNumber; i++ ) {
             this.neuronList.push(
-                new Neuron(previousLayer.neuronList, this.activationType)
+                new Neuron(this.neuronNumber,previousLayer.neuronList, this.activationType)
             )
         }
     }
