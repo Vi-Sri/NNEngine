@@ -13,8 +13,9 @@ class Neuron {
         this._bias = 0;
 
         for(var i = 0; i < this.neuronConnections.length; i++){
-            this._weights[i] = Math.random() * (1/Math.sqrt(this.neuronConnections.length * neuronNumber));
-          } 
+            this._weights[i] = ((Math.random() * 2) - 1) * 
+                                (Math.sqrt(2)/Math.sqrt(this.neuronConnections.length + neuronNumber));
+        }  
     }
 
     CalculatePredictions(){
@@ -26,12 +27,13 @@ class Neuron {
           }
         sum = sum + this._bias
         
-        if(this.activationType == 0){
-            this._predVal = this.sigmoid(sum);
-        }
-        if(this.activationType == 1){
-            this._predVal = this.relu(sum);
-        }
+        if(this.activationType === 0){
+            this._predVal = this.Sigmoid(sum);
+        } else if(this.activationType === 1){
+            this._predVal = this.Relu(sum);
+        } else if (this.activationType === 2) {
+            this._predVal = this.Tanh(sum);
+        } 
     }
 
     static Sigmoid(num) {
@@ -47,9 +49,10 @@ class Neuron {
         }
     }
 
-    static tanh(num) {
+    static Tanh(num) {
         return ( (Math.exp(num) + Math.exp(-num)) / (Math.exp(num) - Math.exp(-num)) )
     }
+
 }
 
-export default {InputNeuron, Neuron};
+export default {Neuron, InputNeuron};

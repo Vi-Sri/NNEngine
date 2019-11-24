@@ -1,4 +1,4 @@
-import {Neuron, InputNeuron} from './neuron';
+import {Neuron, InputNeuron} from './neuron.js';
 
 class InputLayer {
     constructor (data) {

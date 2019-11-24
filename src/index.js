@@ -1,18 +1,21 @@
-import p5 from 'p5';
+import {ForwardPropogate} from './network.js';
 
+var CreateDataset = () => {
+    let dataset = [];
+    let data = [];
+    let randomChoiceMultiplier = [5,10];
 
-let p5functions = (p5Obj) => {
-
-    p5Obj.setup = () => {
-        p5Obj.createCanvas(600,400);
-
+    for (var i =0; i < 100; i++) {
+        data =  [Math.random()*randomChoiceMultiplier[i%2], Math.random()*randomChoiceMultiplier[i%2]]
+        dataset.push(
+            data
+        );
     }
-
-    p5Obj.draw = () => {
-        p5Obj.background(51);
-    }
-
+    return dataset;
 }
 
-const P5 = new p5(p5functions);
-export default P5;
+let dataset = new CreateDataset();
+ForwardPropogate(dataset);
+
+
+
