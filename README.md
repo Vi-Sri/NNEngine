@@ -1,2 +1,2 @@
 # NNEngine
-A port of NNEngine to javascipt ES6 with p5.js Visualization
+A port of NNEngine to javascipt ES2017 with p5.js Visualization
