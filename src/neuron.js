@@ -1,10 +1,10 @@
 class InputNeuron {
-    constructor(dataPoint) {
+ constructor(dataPoint) {
         this._predVal = dataPoint;
     }
 }
 
-class Neuron {
+class Neuron{
     constructor(neuronNumber, neuronConnections, activationType) {
         this._predVal = 0;
         this.neuronConnections = neuronConnections;
@@ -15,7 +15,7 @@ class Neuron {
         for(var i = 0; i < this.neuronConnections.length; i++){
             this._weights[i] = ((Math.random() * 2) - 1) * 
                                 (Math.sqrt(2)/Math.sqrt(this.neuronConnections.length + neuronNumber));
-        }  
+        } 
     }
 
     CalculatePredictions(){
@@ -52,7 +52,6 @@ class Neuron {
     static Tanh(num) {
         return ( (Math.exp(num) + Math.exp(-num)) / (Math.exp(num) - Math.exp(-num)) )
     }
-
 }
 
-export default {Neuron, InputNeuron};
+export {InputNeuron, Neuron};
