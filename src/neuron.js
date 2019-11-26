@@ -1,7 +1,10 @@
 class InputNeuron {
- constructor(dataPoint) {
-        this._predVal = dataPoint;
+ constructor() {
+        this._predVal = 0;
     }
+  CalculatePredictions(dataPoint) {
+      this._predVal = dataPoint;
+  }
 }
 
 class Neuron{
