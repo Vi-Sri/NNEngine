@@ -11,7 +11,7 @@ class Neuron{
     constructor(neuronNumber, neuronConnections, activationType) {
         this._predVal = 0;
         this.neuronConnections = neuronConnections;
-        this.activationType = activationType
+        this.activationType = activationType;
         this._weights = [];
         this._bias = 0;
 

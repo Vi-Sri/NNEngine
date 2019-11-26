@@ -1,7 +1,7 @@
 import {Network} from './network';
 import {InputLayer, Layer} from './layer';
 
-var CreateDataset = () => {
+let CreateDataset = () => {
     let dataset = [];
     let data = [];
     let randomChoiceMultiplier = [5,10];
@@ -27,6 +27,11 @@ let BuildNetwork = (InputShape) => {
     Model.addLayer(finalLayer);
     return Model;
 }
+
+let model = new BuildNetwork(3);
+model.forwardPropogate(dataset);
+
+
 
 
 

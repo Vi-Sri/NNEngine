@@ -1,13 +1,19 @@
-import {Neuron, InputNeuron} from './neuron.js';
+import {Neuron, InputNeuron} from './neuron';
 
 class InputLayer {
      constructor (InputShape){
         this.neuronNumber = InputShape;
         this.neuronList = new Array(this.neuronNumber);
         for(var i = 0; i < this.neuronNumber; i++){
-            this.neuronList.push(new InputNeuron(data[i]));
+            this.neuronList.push(new InputNeuron());
         }   
     }
+
+    CalculatePredictions(dataPoint) {
+        this.neuronList.forEach(inputNeuron => {
+            inputNeuron.CalculatePredictions(dataPoint);
+        });
+    } 
 }
 
 class Layer{
@@ -22,8 +28,11 @@ class Layer{
             )
         }
     }
-    calculatePredictions() {
-        
+
+    CalculatePredictions() {
+        this.neuronList.forEach(neuron => {
+            neuron.CalculatePredictions();
+        });
     }
 }
 
