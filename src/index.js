@@ -1,5 +1,5 @@
-import {Network} from './network';
-import {InputLayer, Layer} from './layer';
+import {Network} from './lib/network';
+import {InputLayer, Layer} from './lib/layer';
 
 let CreateDataset = () => {
     let dataset = [];
